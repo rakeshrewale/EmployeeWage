@@ -3,10 +3,9 @@ package wwwEmployeeWageconcept;
 import java.util.Random;
 
 public class EmployeeWageComp {
+	
+	 public static void calculateTotalWage() {
 
-	public static void main(String[] args) {
-		
-		System.out.println("Welcome to EmployeeWageComputation ");
 		int wagePerHour = 20;
 		int fullDayHours = 8;
 		int wagePerDay = 0;
@@ -42,6 +41,10 @@ public class EmployeeWageComp {
 		}
 
 	}
+	 public static void main(String args[])
+	 {
+		 calculateTotalWage();
+	 }
 		
 		
 }
