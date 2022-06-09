@@ -4,19 +4,22 @@ import java.util.Random;
 
 public class EmployeeWageComp {
 	
-	 public static void calculateTotalWage() {
+		static Random random = new Random();
 
-		int wagePerHour = 20;
-		int fullDayHours = 8;
-		int wagePerDay = 0;
-		int partTimeHours = 4;
-		int monthlySalary = 0;
-		int day = 0;
-		int monthlyHours = 0;
+		static int wagePerHour = 20;
+		static int fullDayHours = 8;
+		static int wagePerDay = 0;
+		static int partTimeHours = 4;
+		static int monthlySalary = 0;
+		static int day = 0;
+		static int monthlyHours = 0;
+		
+		 public static void calculateTotalWage(String companyName, int empPerHour ,int  numOfWorkingDays , int maxHoursPerMonth) {
+			 
 	
 		while (monthlyHours != 100 && day != 20) {
 			day++;
-			Random random = new Random();
+			
 			int attendance = random.nextInt(3);
 			switch (attendance) {
 			case 0:
@@ -40,10 +43,18 @@ public class EmployeeWageComp {
 			System.out.println(" Day is: " +day +" monthlyHours: "+ monthlyHours +" Monthly Salary is: " + monthlySalary);
 		}
 
-	}
+	int totalEmpWage =monthlyHours * empPerHour;
+     System.out.println("Total Emp Wage for company: " + companyName+" is:" + totalEmpWage);
+     return;
+}
 	 public static void main(String args[])
 	 {
-		 calculateTotalWage();
+		 System.out.println("Welcome to Employee Wage Computation Program");
+
+		 calculateTotalWage("Aakar",10,10,100);
+		 calculateTotalWage("Mahindra",20,20,200);
+		 calculateTotalWage("Aletheia",15,15,150);
+
 	 }
 		
 		
