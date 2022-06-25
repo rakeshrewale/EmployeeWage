@@ -13,12 +13,20 @@ public class EmployeeWageComp {
 		static int monthlySalary = 0;
 		static int day = 0;
 		static int monthlyHours = 0;
+		static String companyName;
 		
-		 public static void calculateTotalWage(String companyName, int empPerHour ,int  numOfWorkingDays , int maxHoursPerMonth) {
+		 public EmployeeWageComp(String companyName, int wagePerHour ,int  numOfWorkingDays , int maxHoursPerMonth) {
 			 
-	
-		while (monthlyHours != 100 && day != 20) {
-			day++;
+			    this.companyName = companyName;
+				this.wagePerHour = wagePerHour;
+				this.day = day;
+				this.monthlyHours = monthlyHours;
+			 
+		 }
+		 static void ComputeEmployeeWage() {
+				{
+					while (monthlyHours != 100 && day != 20) {
+						day++;
 			
 			int attendance = random.nextInt(3);
 			switch (attendance) {
@@ -43,17 +51,29 @@ public class EmployeeWageComp {
 			System.out.println(" Day is: " +day +" monthlyHours: "+ monthlyHours +" Monthly Salary is: " + monthlySalary);
 		}
 
-	int totalEmpWage =monthlyHours * empPerHour;
+	int totalEmpWage =monthlyHours * wagePerHour;
      System.out.println("Total Emp Wage for company: " + companyName+" is:" + totalEmpWage);
-     return;
-}
+
+				}
+		 }
 	 public static void main(String args[])
 	 {
 		 System.out.println("Welcome to Employee Wage Computation Program");
 
-		 calculateTotalWage("Aakar",10,10,100);
-		 calculateTotalWage("Mahindra",20,20,200);
-		 calculateTotalWage("Aletheia",15,15,150);
+		 EmployeeWageComp Hughes = new EmployeeWageComp("Hughes", 20, 20, 100);
+
+			Hughes.ComputeEmployeeWage();
+			
+			EmployeeWageComp Aakar = new EmployeeWageComp("Aakar", 10, 10, 100);
+
+			Aakar.ComputeEmployeeWage();
+			
+
+			EmployeeWageComp Aletheia = new EmployeeWageComp("Aletheia", 20, 30, 100);
+
+			Aletheia.ComputeEmployeeWage();
+			
+
 
 	 }
 		
